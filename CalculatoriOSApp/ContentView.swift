@@ -32,8 +32,12 @@ struct ContentView: View {
         Button("Add", action: {
             let num1:Float? = Float(tf1);
             let num2:Float? = Float(tf2);
-            let result:Float = Float(num1!) + Float(num2!);
-            tfr = String(result);
+            if(num1 != nil && num2 != nil){
+                let result:Float = Float(num1!) + Float(num2!);
+                tfr = String(result);
+            }else{
+                tfr = "NaN";
+            }
         }).padding()
             .font(.largeTitle)
             .multilineTextAlignment(.center).buttonStyle(.borderedProminent);
